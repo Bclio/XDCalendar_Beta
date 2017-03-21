@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MCMainWindow</class>
+ <widget class="QStackedWidget" name="MCMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>542</width>
+    <height>348</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>StackedWidget</string>
+  </property>
+  <widget class="QWidget" name="pNormalModeWgt"/>
+  <widget class="QWidget" name="pInClassModeWgt"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
