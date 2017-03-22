@@ -37,14 +37,14 @@ message("root path::::")
 MOONCALENDAR_BUILD_ROOT_PATH = $$XDPROJECT_BUILD_ROOT_PATH/MoonCalendar_Beta
 
 CONFIG(release, debug|release) {
-    DEPENDPATH += $$MOONCALENDAR_BUILD_ROOT_PATH/libs/release
-    LIBS += -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/release
+    DEPENDPATH *= $$MOONCALENDAR_BUILD_ROOT_PATH/libs/release
+    LIBS *= -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/release
 }else{
-    DEPENDPATH += $$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug
-    LIBS += -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug
+    DEPENDPATH *= $$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug
+    LIBS *= -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug
 }
 
-#platform相关设置.
+#platform settings.
 *-g++{
 message("used g++ complier")
 
@@ -54,7 +54,10 @@ message("used g++ complier")
   QMAKE_CXXFLAGS += /Zm500
 }
 
-INCLUDEPATH *= $$MOONCALENDAR_BETA_SRC_ROOT_PATH/include
+REF_DEPENDICY_PATH = $$MOONCALENDAR_BETA_SRC_ROOT_PATH/../ref #reference files and libs path,eg.QtSingleApplication.
+INCLUDEPATH *= $$REF_DEPENDICY_PATH/include #ref include path.
+LIBS *= -L$$REF_DEPENDICY_PATH/libs #ref libs path.
+INCLUDEPATH *= $$MOONCALENDAR_BETA_SRC_ROOT_PATH/include #in code include files path.
 INCLUDEPATH *= $$MOONCALENDAR_BETA_SRC_ROOT_PATH/messagehandler
 
 CONFIG += c++14

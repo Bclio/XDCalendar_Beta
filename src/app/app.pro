@@ -28,8 +28,10 @@ FORMS += \
     mcmainwindow.ui
 
 HEADERS += \
-    mcmainwindow.h
+    mcmainwindow.h \
+    singleclassobjectmanager.h
 
 SOURCES += \
     mcmainwindow.cpp \
-    main.cpp
+    main.cpp \
+    singleclassobjectmanager.cpp

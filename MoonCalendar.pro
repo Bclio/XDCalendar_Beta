@@ -7,13 +7,14 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS += \
-        src\app \
         src\messagehandler \
-        src\datahandler \
+        src\datamanager \
         src\settings \
-        src\mooncalendargui \
+        src\baseui \
         src\filemanager \
-        src\plugins
+        src\datamanagerui \ #the gui realization of datamanager.
+        src\plugins \
+        src\app #app must at the end.
 
 TRANSLATIONS += lang/MoonCalendar_en.ts lang/MoonCalendar_zh_CN.ts
 

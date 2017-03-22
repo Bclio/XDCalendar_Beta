@@ -19,8 +19,8 @@ HEADERS += \
     messagehandlermanager.h \
     mooncalendarguimessagehandler.h \
     messagetype.h \
-    datahandlermessgehandler.h \
-    filemanagermessagehandler.h
+    filemanagermessagehandler.h \
+    datahandlermessgehandler.h
 
 SOURCES += \
     messagehandlermanager.cpp

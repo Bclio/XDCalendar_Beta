@@ -13,6 +13,5 @@ TEMPLATE = lib
 TARGET = settings
 
 HEADERS += \
-    settings_global.h \
     settings_global.h
 
