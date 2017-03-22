@@ -1,18 +1,28 @@
 #include "mcmainwindow.h"
 #include "ui_mcmainwindow.h"
+#include <messagehandlermanager.h>
+#include <mooncalendarguimessagehandler.h>
 #include <QMessageBox>
 #include <QEvent>
 
+#include <QDebug>
+
+class MCMainWindowPrivate {
+    friend class MCMainWindow;
+    ns_xd_msg::MoonCalendarGuiMessageHandler *pGuiMessageHandler = Q_NULLPTR;
+};
+
 MCMainWindow::MCMainWindow(QWidget *parent) :
     QStackedWidget(parent),
-    ui(new Ui::MCMainWindow)
+    ui(new Ui::MCMainWindow),
+    m_pData(new MCMainWindowPrivate)
 {
     ui->setupUi(this);
 
     setCurrentIndex(-1);
     changeToNormalMode();
 
-//    installEventFilter(this);
+    registerMessageHandler();
 }
 
 MCMainWindow::~MCMainWindow()
@@ -47,7 +57,12 @@ void MCMainWindow::handleMessage(const QString &)
 //    raise();
     activateWindow();
 //    setWindowFlags(windowFlags() &~ Qt::WindowStaysOnTopHint);
-//    show();
+    //    show();
+}
+
+void MCMainWindow::testSignalSlot()
+{
+    qDebug() << "testSignal complete";
 }
 
 //bool MCMainWindow::eventFilter(QObject *watched, QEvent *event)
@@ -80,3 +95,15 @@ void MCMainWindow::activateWindow()
     raise();
 }
 
+void MCMainWindow::registerMessageHandler()
+{
+    ns_xd_msg::MessageHandlerManager *pMsgManager = ns_xd_msg::MessageHandlerManager::getInstance();
+    m_pData->pGuiMessageHandler = dynamic_cast<ns_xd_msg::MoonCalendarGuiMessageHandler*>(pMsgManager->getMessageHandler(ns_xd_msg::MsgHdrType::MoonCalendarGui));
+    connect(m_pData->pGuiMessageHandler, &ns_xd_msg::MoonCalendarGuiMessageHandler::testSignal, this, &MCMainWindow::testSignalSlot);
+}
+
+
+void MCMainWindow::on_pushButton_clicked()
+{
+    emit m_pData->pGuiMessageHandler->testSignal();
+}

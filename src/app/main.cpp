@@ -1,4 +1,5 @@
 #include "mcmainwindow.h"
+
 #include <QApplication>
 #include <qtsingleapplication.h>
 #include <QMessageBox>

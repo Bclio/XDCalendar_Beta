@@ -13,7 +13,24 @@
   <property name="windowTitle">
    <string>StackedWidget</string>
   </property>
-  <widget class="QWidget" name="pNormalModeWgt"/>
+  <property name="currentIndex">
+   <number>0</number>
+  </property>
+  <widget class="QWidget" name="pNormalModeWgt">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>230</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QWidget" name="pInClassModeWgt"/>
  </widget>
  <resources/>

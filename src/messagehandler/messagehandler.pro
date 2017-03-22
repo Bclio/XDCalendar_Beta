@@ -3,7 +3,7 @@
 # Project created by QtCreator 2017-02-06T10:36:51
 #
 #-------------------------------------------------
-include(../src.pri)
+include(../libs.pri)
 
 QT += core
 QT -= gui
@@ -16,7 +16,11 @@ DEFINES += MESSAGEHANDLER_LIBRARY
 HEADERS += \
     messagehandler_global.h \
     imessagehandler.h \
-    messagehandlermanager.h
+    messagehandlermanager.h \
+    mooncalendarguimessagehandler.h \
+    messagetype.h \
+    datahandlermessgehandler.h \
+    filemanagermessagehandler.h
 
 SOURCES += \
     messagehandlermanager.cpp

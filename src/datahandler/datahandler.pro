@@ -3,7 +3,7 @@
 # Project created by QtCreator 2017-02-06T10:36:51
 #
 #-------------------------------------------------
-include(../src.pri)
+include(../libs.pri)
 
 QT += core
 QT -= gui

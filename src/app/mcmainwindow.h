@@ -7,6 +7,12 @@ namespace Ui {
 class MCMainWindow;
 }
 
+//namespace ns_xd_msg {
+//class MoonCalendarGuiMessageHandler;
+//}
+
+class MCMainWindowPrivate;
+
 class MCMainWindow : public QStackedWidget
 {
     Q_OBJECT
@@ -27,12 +33,19 @@ public slots:
 protected:
 //    bool eventFilter(QObject *watched, QEvent *event);
 
+private slots:
+    void testSignalSlot(); //only for test modules connections.
+
+    void on_pushButton_clicked(); //only for test signal connections.
+
 private:
     void activateWindow();
 
+    void registerMessageHandler();
+
 private:
     Ui::MCMainWindow *ui;
-
+    MCMainWindowPrivate *m_pData;
 };
 
 #endif // XDSOFT_MCMAINWINDOW_H

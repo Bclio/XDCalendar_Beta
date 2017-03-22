@@ -13,11 +13,14 @@ CONFIG(debug, debug|release){
     TARGET = MoonCalendarD
     DESTDIR = $$MOONCALENDAR_BUILD_ROOT_PATH/bin/debug
     LIBS += -L $$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug -lQtSingleApplicationd
+
 }else{
     TARGET = MoonCalendar
     DESTDIR = $$MOONCALENDAR_BUILD_ROOT_PATH/bin/release
     LIBS += -L $$MOONCALENDAR_BUILD_ROOT_PATH/libs/release -lQtSingleApplication
 }
+
+LIBS += -lmessagehandler
 
 INCLUDEPATH += ../../include
 

@@ -3,7 +3,7 @@
 # Project created by BiXiaoxia 2017-03-06T12:46:51
 # program settings module.
 #-------------------------------------------------
-include(../src.pri)
+include(../libs.pri)
 
 QT += core
 QT -= gui

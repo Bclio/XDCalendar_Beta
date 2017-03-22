@@ -37,11 +37,11 @@ message("root path::::")
 MOONCALENDAR_BUILD_ROOT_PATH = $$XDPROJECT_BUILD_ROOT_PATH/MoonCalendar_Beta
 
 CONFIG(release, debug|release) {
-    DEPENDPATH += $$MOONCALENDAR_BUILD_ROOT_PATH/libs/x86/Release
-    LIBS += -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/x86/Release
+    DEPENDPATH += $$MOONCALENDAR_BUILD_ROOT_PATH/libs/release
+    LIBS += -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/release
 }else{
-    DEPENDPATH += $$MOONCALENDAR_BUILD_ROOT_PATH/libs/x86/Debug
-    LIBS += -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/x86/Debug
+    DEPENDPATH += $$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug
+    LIBS += -L$$MOONCALENDAR_BUILD_ROOT_PATH/libs/debug
 }
 
 #platform相关设置.
@@ -53,4 +53,9 @@ message("used g++ complier")
 }else:win32-msvc*{
   QMAKE_CXXFLAGS += /Zm500
 }
+
+INCLUDEPATH *= $$MOONCALENDAR_BETA_SRC_ROOT_PATH/include
+INCLUDEPATH *= $$MOONCALENDAR_BETA_SRC_ROOT_PATH/messagehandler
+
+CONFIG += c++14
 

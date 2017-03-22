@@ -3,6 +3,7 @@
 # Project created by QtCreator 2017-03-13T11:39:02
 #
 #-------------------------------------------------
+include(../libs.pri)
 
 TARGET = mooncalendargui
 TEMPLATE = lib
